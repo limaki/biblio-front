@@ -1,0 +1,58 @@
+<div style="width: 20px; height: 200px;"></div>
+
+<div class="container">
+    <h2>Buscar Libro por ID</h2>
+    
+    <!-- Formulario de búsqueda -->
+    <div class="form-group">
+      <label for="id">ID del Libro:</label>
+      <input type="number"id="id"class="form-control"[(ngModel)]="id"placeholder="Ingrese el ID del libro"/>
+
+    </div>
+    <button class="btn btn-primary" (click)="buscar()">Buscar</button>
+    <br>
+    <br>
+    <br>
+  
+    <!-- Tarjeta de resultados -->
+    <div *ngIf="libro; else noResult">
+      <div class="card mt-4">
+        <div class="card-header">
+          <h3>Detalles del Libro</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>ID:</strong> {{ libro.id }}</p>
+          <p><strong>Título:</strong> {{ libro.titulo }}</p>
+          <p><strong>Autor:</strong> {{ libro.autor }}</p>
+          <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+          <p><strong>Año:</strong> {{ libro.anio }}</p>
+          <p><strong>Estado:</strong> {{ libro.estado }}</p>
+          <p><strong>ISBN:</strong> {{ libro.isbn }}</p>
+          <p><strong>Préstamos:</strong> {{ libro.prestamos }}</p>
+          <p><strong>Usuario ID:</strong> {{ libro.usuarioId }}</p>
+          <p><strong>Vendedor ID:</strong> {{ libro.vendedorId }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          Información del libro
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mensaje de error -->
+    <ng-template #noResult>
+      <p *ngIf="error" class="text-danger">{{ error }}</p>
+    </ng-template>
+  </div>
+
+  <br>
+  <br>
+  <div style="width: 20px; height: 150px;"></div>
+  <footer class="bg-body-tertiary text-center text-lg-start footer">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  

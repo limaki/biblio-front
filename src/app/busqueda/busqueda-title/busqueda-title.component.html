@@ -1,0 +1,66 @@
+<div style="width: 20px; height: 100px;"></div>
+
+<div class="container">
+  <h2>Buscar Libros</h2>
+  
+ 
+  <div class="form-group">
+    <label for="titulo">Título del Libro:</label>
+    <input
+      type="text"
+      id="titulo"
+      class="form-control"
+      [(ngModel)]="titulo"
+      placeholder="Ingrese el título del libro"
+    />
+  </div>
+  <button class="btn btn-primary mt-2" (click)="buscar()">Buscar</button>
+  
+  
+  <div *ngIf="libros.length > 0" class="mt-4">
+    <h3>Resultados de la Búsqueda:</h3>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let libro of libros">
+          <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">{{ libro.titulo }}</h5>
+            </div>
+          <div class="card-body">
+            <p><strong>ID:</strong> {{ libro.id }}</p>
+            <p><strong>Título:</strong> {{ libro.titulo }}</p>
+            <p><strong>Autor:</strong> {{ libro.autor }}</p>
+            <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+            <p><strong>Año:</strong> {{ libro.anio }}</p>
+            <p><strong>Estado:</strong> {{ libro.estado }}</p>
+            <p><strong>ISBN:</strong> {{ libro.isbn }}</p>
+            <p><strong>Préstamos:</strong> {{ libro.prestamos }}</p>
+            <p><strong>Usuario ID:</strong> {{ libro.usuarioId }}</p>
+            <p><strong>Vendedor ID:</strong> {{ libro.vendedorId }}</p>
+          </div>
+                <div class="card-footer text-muted">
+            Información del libro
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<br>
+<br>
+
+>
+<footer class="bg-body-tertiary text-center text-lg-start footer">
+
+  <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap</a>
+  </div>
+
+</footer>

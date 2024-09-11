@@ -1,0 +1,143 @@
+
+<div style="width: 20px; height: 100px;"></div>
+
+<div class="container ">
+    <h2 class="text-center mb-4">Agregar Nuevo Libro</h2>
+    <form >
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input
+            type="text"
+            id="isbn"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.isbn"
+            name="isbn"
+            required
+            placeholder="Ingrese el ISBN del libro"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="titulo" class="form-label">Título</label>
+          <input
+            type="text"
+            id="titulo"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.titulo"
+            name="titulo"
+            required
+            placeholder="Ingrese el título del libro"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="autor" class="form-label">Autor</label>
+          <input
+            type="text"
+            id="autor"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.autor"
+            name="autor"
+            required
+            placeholder="Ingrese el autor del libro"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="editorial" class="form-label">Editorial</label>
+          <input
+            type="text"
+            id="editorial"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.editorial"
+            name="editorial"
+            required
+            placeholder="Ingrese la editorial del libro"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="anio" class="form-label">Año</label>
+          <input
+            type="number"
+            id="anio"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.anio"
+            name="anio"
+            required
+            min="1000"
+            max="9999"
+            placeholder="Ingrese el año de publicación"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <input
+            type="text"
+            id="estado"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.estado"
+            name="estado"
+            required
+            placeholder="Ingrese el estado del libro"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="prestamos" class="form-label">Número de Préstamos</label>
+          <input
+            type="number"
+            id="prestamos"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.prestamos"
+            name="prestamos"
+            required
+            min="0"
+            placeholder="Ingrese el número de préstamos"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="usuarioId" class="form-label">ID Usuario</label>
+          <input
+            type="number"
+            id="usuarioId"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.usuarioId"
+            name="usuarioId"
+            required
+            min="0"
+            placeholder="Ingrese el ID del usuario"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="vendedorId" class="form-label">ID Vendedor</label>
+          <input
+            type="number"
+            id="vendedorId"
+            class="form-control"
+            [(ngModel)]="nuevoLibro.vendedorId"
+            name="vendedorId"
+            required
+            min="0"
+            placeholder="Ingrese el ID del vendedor"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg" (click)="agregarlibro()">Agregar Libro</button>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+
+  <footer class="bg-body-tertiary text-center text-lg-start footer">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>

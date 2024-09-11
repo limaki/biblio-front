@@ -1,0 +1,40 @@
+<div style="width: 20px; height: 200px;"></div>
+
+<div class="container ">
+    <h2 class="text-center mb-4">Detalles del Libro</h2>
+  
+    <div *ngIf="detallesLibro.id" class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="card-title">{{ detallesLibro.titulo }}</h5>
+      </div>
+      <div class="card-body">
+        <p><strong>ISBN:</strong> {{ detallesLibro.isbn }}</p>
+        <p><strong>Autor:</strong> {{ detallesLibro.autor }}</p>
+        <p><strong>Editorial:</strong> {{ detallesLibro.editorial }}</p>
+        <p><strong>Año:</strong> {{ detallesLibro.anio }}</p>
+        <p><strong>Estado:</strong> {{ detallesLibro.estado }}</p>
+        <p><strong>Préstamos:</strong> {{ detallesLibro.prestamos }}</p>
+        <p><strong>Usuario ID:</strong> {{ detallesLibro.usuarioId }}</p>
+        <p><strong>Vendedor ID:</strong> {{ detallesLibro.vendedorId }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Información del libro
+      </div>
+    </div>
+  
+    <div *ngIf="!detallesLibro.id" class="alert alert-warning mt-4">
+      No se encontraron detalles para el libro con ID {{ id }}.
+    </div>
+  </div>
+
+  <div style="width: 20px; height: 150px;"></div>
+  
+
+  <footer class="bg-body-tertiary text-center text-lg-start footer">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>

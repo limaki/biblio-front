@@ -1,0 +1,57 @@
+
+<div style="width: 20px; height: 100px;"></div>
+
+<!-- <button class="btn btn-dark" routerLink="/agregar">agregar</button> -->
+<div *ngIf="isAdminLoggedIn" style="margin:20px; text-align: center;">
+<button class="btn btn-primary btn-lg add-button" routerLink="/agregar">
+    <i class="bi bi-plus-circle"></i> Agregar
+  </button>
+</div>
+<div class="container mt-4" *ngIf="isAdminLoggedIn || isUserLoggedIn">
+    <div class="row">
+      <div *ngFor="let libro of libros" class="col-md-4 mb-4">
+        <div class="card">
+           <img [src]="imagen" class="card-img-top" alt="{{libro.titulo}}"> 
+           
+          <div class="card-body">
+            <h5 class="card-title">{{libro.titulo}}</h5>
+            <p class="card-text"><strong>ID:</strong> {{libro.id}}</p>
+            <p class="card-text"><strong>Año:</strong> {{libro.anio}}</p>
+            <p class="card-text"><strong>Autor:</strong> {{libro.autor}}</p>
+            <p class="card-text"><strong>Editorial:</strong> {{libro.editorial}}</p>
+            <p class="card-text"><strong>Estado:</strong> {{libro.estado}}</p>
+            <p class="card-text"><strong>ISBN:</strong> {{libro.isbn}}</p>
+            <!-- <p class="card-text"><strong>Usuario ID:</strong> {{libro.usuarioId}}</p>
+            <p class="card-text"><strong>Vendedor ID:</strong> {{libro.vendedorId}}</p>
+            <p class="card-text"><strong>Préstamos:</strong> {{libro.prestamos}}</p> -->
+          </div>
+          
+          <div *ngIf="!isUserLoggedIn" style="margin-bottom: 5%; margin-left: 3%;">
+          <button class="btn btn-danger" (click)="deleteLibro(libro.id)">eliminar</button>
+          <button class="btn btn-primary" [routerLink]="[('/editar' + '/' + libro.id)]" style="margin-left: 2%;">editar</button>
+          </div>
+          <button class="btn btn-primary" [routerLink]="[('/detalle' + '/' + libro.id)]">Detalles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="!isAdminLoggedIn && !isUserLoggedIn">
+    <h4 class="alert-heading">Acceso detenido</h4>
+    <p>para tener acceso a nuestra biblioteca se necesita registrarse en este sitio</p>
+    <hr>
+    <p class="mb-0">registrese y acceda a nuestro gran catalogo</p>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+  <footer class="bg-body-tertiary text-center text-lg-start footer">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>

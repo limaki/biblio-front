@@ -1,0 +1,30 @@
+<div class="user-list-container">
+    <h1>Lista de Usuarios</h1>
+    <div *ngIf="users.length > 0">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre Completo</th>
+            <th>Email</th>
+            <th>Identificación</th>
+            <th>DNI</th>
+            <th>Rol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.nombreCompleto }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.identificacion }}</td>
+            <td>{{ user.dni }}</td>
+            <td>{{ user.userRole }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="users.length === 0" class="no-users">
+      <p>No hay usuarios disponibles.</p>
+    </div>
+  </div>

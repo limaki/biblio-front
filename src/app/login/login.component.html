@@ -1,0 +1,37 @@
+<div style="width: 10px; height: 100px;"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <h2 class="text-center text-primary mb-4">Login</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <p class="parrafoContra" style="color: red;display: none;">No existe esta cuenta</p>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+            </div>
+
+            <p>No tenes cuenta? registrate <a routerLink="/signup" style="color: red;">Aca</a> <i style="font-style: normal;margin-left: 5%;">Ya tenes cuenta? <a routerLink="/libros" style="color: green; ">ingresa aca</a></i></p>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <br>
+            <!-- <button class="btn btn-primary w-100" (click)="logout()" style="margin-top: 20px;">logout</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-body-tertiary text-center text-lg-start footer">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(33, 27, 222, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+    <!-- Copyright -->
+  </footer>

@@ -1,0 +1,20 @@
+/* Ajusta el tamaño máximo del contenedor de la tarjeta */
+.card {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Estiliza el pie de página de la tarjeta */
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  
+  /* Agrega margen a la alerta */
+  .alert {
+    margin-top: 20px;
+  }
+  .footer{
+
+    width: 100%;
+    background-color: rgb(0, 123, 255) !important;
+ }
